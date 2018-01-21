@@ -6,10 +6,13 @@ using UnityEngine.UI;
 public class ChangeList : MonoBehaviour {
 
     public bool cat = false;
-    public bool pencil = false;
-    public bool pills = false;
+	public bool pencil = false;
+	public bool pills = false;
     public bool phone = false;
 
+
+	public GameObject otherGameObject;
+	private PickPills pickPills;
     public AudioSource[] sounds;
     public AudioSource audio1;
     public AudioSource audio2;
@@ -18,7 +21,9 @@ public class ChangeList : MonoBehaviour {
     bool PlaySound;
 
     //private Material a;
-
+	void Awake() {
+	//	pickPills = GetComponent<PickPills> ();
+	}
     // Use this for initialization
     void Start () {
         // GetComponent<Image>().sprite = Resources.Load("C: \\Users\\Petra\\Documents\\GitHub\\games\\VergissMeinNichtUpdate\\Prototype1\\Assets\\Liste2.png", typeof(Sprite)) as Sprite;
@@ -62,14 +67,7 @@ public class ChangeList : MonoBehaviour {
     void setCat(bool NEW) {
         cat = NEW;
     }
-    bool getPills()
-    {
-        return pills;
-    }
-    void setPills(bool NEW)
-    {
-        pills = NEW;
-    }
+   
     bool getPhone()
     {
         return phone;

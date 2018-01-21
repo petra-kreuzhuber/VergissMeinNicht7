@@ -4,18 +4,23 @@ using UnityEngine;
 
 public class PickPills : MonoBehaviour {
 
-//	public ChangeList ChangeList;
+	public GameObject otherGameObject;
+	private ChangeList changeList;
+
+	void Awake(){
+		changeList = otherGameObject.GetComponent<ChangeList> ();
+	}
+
 	// Update is called once per frame
 	void OnMouseDown(){
+		
 		Destroy (gameObject);
-		//ChangeList.pills = true;
+
+
 
 	}
-	/*
-	void Update () {
-		if (Input.GetKeyDown (KeyCode.Mouse0)) {
-			Destroy (GetComponent<MeshRenderer>());
-		}
+		
+	void OnDestroy() {
+		changeList.pills = true;
 	}
-	*/
 }
