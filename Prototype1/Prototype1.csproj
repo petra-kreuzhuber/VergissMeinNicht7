@@ -230,6 +230,8 @@
     <Compile Include="Assets\scripts\ILookAtHandler.cs" />
     <Compile Include="Assets\scripts\LookAtInteraction.cs" />
     <Compile Include="Assets\scripts\LookAtList.cs" />
+    <Compile Include="Assets\scripts\PickPencil.cs" />
+    <Compile Include="Assets\scripts\PickPills.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
