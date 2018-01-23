@@ -4116,7 +4116,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.9832876, y: 2.8432171, z: 3.9792778}
+  m_Size: {x: 1.5, y: 1.5, z: 1.5}
   m_Center: {x: 0, y: 0.00000005960465, z: -0.00000005960464}
 --- !u!1 &486519816
 GameObject:
@@ -6162,15 +6162,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 92a56d93f97679140af8e5a5c91f6015, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.42939886
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 92a56d93f97679140af8e5a5c91f6015, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.31950969
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 92a56d93f97679140af8e5a5c91f6015, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.42939883
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 92a56d93f97679140af8e5a5c91f6015, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -6476,15 +6476,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5f3fa1acddcb3e94d8ceb163278bd414, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5f3fa1acddcb3e94d8ceb163278bd414, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5f3fa1acddcb3e94d8ceb163278bd414, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5f3fa1acddcb3e94d8ceb163278bd414, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6497,7 +6497,7 @@ Prefab:
     - target: {fileID: 2300010, guid: 5f3fa1acddcb3e94d8ceb163278bd414, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 0de8400c3c219d44c9c449238cafd40e, type: 2}
+      objectReference: {fileID: 2100000, guid: ff24a24937f89924486a598fd2204bd1, type: 2}
     - target: {fileID: 2300010, guid: 5f3fa1acddcb3e94d8ceb163278bd414, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
@@ -6687,7 +6687,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5922532, y: 4.322232, z: 1.9746408}
+  m_Size: {x: 0.8, y: 3, z: 1.5}
   m_Center: {x: 0.00005602838, y: 0, z: 0.00000217557}
 --- !u!1 &1816834496
 GameObject:
