@@ -16,6 +16,8 @@ public class ChangeList : MonoBehaviour {
     public AudioSource[] sounds;
     public AudioSource audio1;
     public AudioSource audio2;
+    public double timer;
+    bool biggerThanTimer = false;
 
 
     bool PlaySound;
@@ -33,11 +35,12 @@ public class ChangeList : MonoBehaviour {
         sounds = GetComponents<AudioSource>();
         audio1 = sounds[1];
         audio2 = sounds[2];
+        timer = Time.time;
     }
 	
 	// Update is called once per frame
 	void Update () {
-		if (cat && pills && phone && pencil) {
+		/*if (cat && pills && phone && pencil) {
 			GetComponent<MeshRenderer> ().material = Resources.Load ("Liste4") as Material;
 		} else if (cat && pills && pencil) {
 			//   StartCoroutine(Wait());
@@ -47,10 +50,41 @@ public class ChangeList : MonoBehaviour {
            
 			audio2.Play ();
 			GetComponent<MeshRenderer> ().material = Resources.Load ("Liste2") as Material;
-		} else {
-			audio1.Play();
-		}
+		}// else {
+			//audio1.Play ();
+		//}
 
+        print(biggerThanTimer);
+        if (Time.time > timer + 5 && !biggerThanTimer)
+        {
+            biggerThanTimer = true;
+            audio1.Play ();
+            
+        }
+        print(Time.time - timer);
+        */
+        if(Time.time > timer + 5 && !biggerThanTimer)
+        {
+            biggerThanTimer = true;
+            audio1.Play();
+        }
+        if (cat && pills && phone && pencil)
+        {
+            GetComponent<MeshRenderer>().material = Resources.Load("Liste4") as Material;
+        }
+        else if (cat && pills && pencil)
+        { 
+            GetComponent<MeshRenderer>().material = Resources.Load("Liste3") as Material;
+        }
+        else if (cat && pencil)
+        {
+            audio2.Play();
+            GetComponent<MeshRenderer>().material = Resources.Load("Liste2") as Material;
+        }
+        else if(true)
+        {
+            audio1.Play();
+        }
     }
 
     /*

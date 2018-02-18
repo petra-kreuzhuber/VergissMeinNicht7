@@ -1,8 +1,8 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\ChangeList.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="Assets\scripts\ChangeList.cs" Line="51" Column="18" />
+      <File FileName="Assets\scripts\ChangeList.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\LookAtInteraction.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\PickPills.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\PickPencil.cs" Line="1" Column="1" />
