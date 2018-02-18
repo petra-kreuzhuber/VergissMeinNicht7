@@ -37,19 +37,20 @@ public class ChangeList : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(cat && pills && phone && pencil)
-        {
-            GetComponent<MeshRenderer>().material = Resources.Load("Liste4") as Material;
-        } else if(cat && pills && pencil)
-        {
-         //   StartCoroutine(Wait());
-            audio2.Play();
-            GetComponent<MeshRenderer>().material = Resources.Load("Liste3") as Material;
-        } else if(cat && pencil)
-        {
-            audio1.Play();
-            GetComponent<MeshRenderer>().material = Resources.Load("Liste2") as Material;
-        } 
+		if (cat && pills && phone && pencil) {
+			GetComponent<MeshRenderer> ().material = Resources.Load ("Liste4") as Material;
+		} else if (cat && pills && pencil) {
+			//   StartCoroutine(Wait());
+            
+			GetComponent<MeshRenderer> ().material = Resources.Load ("Liste3") as Material;
+		} else if (cat && pencil) {
+           
+			audio2.Play ();
+			GetComponent<MeshRenderer> ().material = Resources.Load ("Liste2") as Material;
+		} else {
+			audio1.Play();
+		}
+
     }
 
     /*
