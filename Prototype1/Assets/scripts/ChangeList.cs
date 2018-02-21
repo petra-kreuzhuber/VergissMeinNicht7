@@ -18,6 +18,11 @@ public class ChangeList : MonoBehaviour {
     public AudioSource audio2;
     public double timer;
     bool biggerThanTimer = false;
+	bool biggerThanTimer2 = false;
+	bool biggerThanTimer3 = false;
+	bool biggerThanTimer4 = false;
+	bool biggerThanTimer5 = false;
+	bool biggerThanTimer6 = false;
 
 
     bool PlaySound;
@@ -40,51 +45,40 @@ public class ChangeList : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		/*if (cat && pills && phone && pencil) {
-			GetComponent<MeshRenderer> ().material = Resources.Load ("Liste4") as Material;
-		} else if (cat && pills && pencil) {
-			//   StartCoroutine(Wait());
-            
-			GetComponent<MeshRenderer> ().material = Resources.Load ("Liste3") as Material;
-		} else if (cat && pencil) {
-           
+		//erster Katzenruf gleich am Anfang
+        if(Time.time > timer + 20 && !biggerThanTimer)
+        {
+            biggerThanTimer = true;
+            audio1.Play();
+        }
+		if (pencil && !biggerThanTimer2) {
+			biggerThanTimer2 = true;
+			biggerThanTimer3 = true;
+			timer = Time.time;
+		}
+		if (Time.time > timer + 20 && biggerThanTimer3) {
+			biggerThanTimer3 = false;
+			audio1.Play ();
+			cat = true;
+		}
+		if (pills && !biggerThanTimer4) {
+			biggerThanTimer4 = true;
+			biggerThanTimer5 = true;
+			timer = Time.time;
+		}
+		if (Time.time > timer + 20 && biggerThanTimer5) {
+			biggerThanTimer5 = false;
+			biggerThanTimer6 = true;
 			audio2.Play ();
-			GetComponent<MeshRenderer> ().material = Resources.Load ("Liste2") as Material;
-		}// else {
-			//audio1.Play ();
-		//}
+			timer = Time.time;
+		}
+		if (Time.time > timer + 25 && biggerThanTimer6) {
+			phone = true;
+			//ende?!
+		}
 
-        print(biggerThanTimer);
-        if (Time.time > timer + 5 && !biggerThanTimer)
-        {
-            biggerThanTimer = true;
-            audio1.Play ();
-            
-        }
-        print(Time.time - timer);
-        */
-        if(Time.time > timer + 5 && !biggerThanTimer)
-        {
-            biggerThanTimer = true;
-            audio1.Play();
-        }
-        if (cat && pills && phone && pencil)
-        {
-            GetComponent<MeshRenderer>().material = Resources.Load("Liste4") as Material;
-        }
-        else if (cat && pills && pencil)
-        { 
-            GetComponent<MeshRenderer>().material = Resources.Load("Liste3") as Material;
-        }
-        else if (cat && pencil)
-        {
-            audio2.Play();
-            GetComponent<MeshRenderer>().material = Resources.Load("Liste2") as Material;
-        }
-        else if(true)
-        {
-            audio1.Play();
-        }
+
+		listUpdate ();
     }
 
     /*
@@ -118,4 +112,19 @@ public class ChangeList : MonoBehaviour {
     void setPencil(bool NEW) {
         pencil = NEW;
         }
+
+	void listUpdate() {
+		//Wenn alle Aufgaben erfüllt sind wird die vollstänig abgehakte Liste angezeigt
+		if (cat && pills && phone && pencil) {
+			GetComponent<MeshRenderer> ().material = Resources.Load ("Liste4") as Material;
+		}
+		//Wenn Pillen und Katze schon erfüllt werden diese beiden abgehackt
+		else if (cat && pills && pencil) { 
+			GetComponent<MeshRenderer> ().material = Resources.Load ("Liste3") as Material;
+		}
+		//wenn Katze schon erfüllt wird dieses abgehackt
+		else if (cat && pencil) {
+			GetComponent<MeshRenderer> ().material = Resources.Load ("Liste2") as Material;
+		}
+	}
 }
