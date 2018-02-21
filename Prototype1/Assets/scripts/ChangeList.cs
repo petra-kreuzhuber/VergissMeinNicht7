@@ -17,6 +17,8 @@ public class ChangeList : MonoBehaviour {
     public AudioSource audio1;
     public AudioSource audio2;
     public double timer;
+
+	//Variablen für Audio in der Update
     bool biggerThanTimer = false;
 	bool biggerThanTimer2 = false;
 	bool biggerThanTimer3 = false;
@@ -51,44 +53,47 @@ public class ChangeList : MonoBehaviour {
             biggerThanTimer = true;
             audio1.Play();
         }
+		//Timer wird nach Stiftaufnahme neu gesetzt
 		if (pencil && !biggerThanTimer2) {
 			biggerThanTimer2 = true;
 			biggerThanTimer3 = true;
 			timer = Time.time;
 		}
+
+		// 2. Katzenruf nach Aufnahme von Stift und bestimmter Zeit und Katzenaufgabe gilt als abgeschlossen
 		if (Time.time > timer + 20 && biggerThanTimer3) {
 			biggerThanTimer3 = false;
 			audio1.Play ();
 			cat = true;
 		}
+
+		// Timer wird nach Pillenaufnahme neu gesetzt
 		if (pills && !biggerThanTimer4) {
 			biggerThanTimer4 = true;
 			biggerThanTimer5 = true;
 			timer = Time.time;
 		}
+
+		//Nach Pillenaufnahme und bestimmter Zeit wird Telefongeräusch abgespielt
 		if (Time.time > timer + 20 && biggerThanTimer5) {
 			biggerThanTimer5 = false;
 			biggerThanTimer6 = true;
 			audio2.Play ();
 			timer = Time.time;
 		}
+
+		//nach bestimmter Zeit wird Telephon abgeschlossen 
 		if (Time.time > timer + 25 && biggerThanTimer6) {
 			phone = true;
 			//ende?!
 		}
 
-
+		//updatet die Liste je nach Variablenzustand
 		listUpdate ();
     }
 
-    /*
-    IEnumerator Wait()
-    {
-        yield return new WaitForSeconds(5.0f);
-        PlaySound = true;
-    }
-    */
 
+	//Getter und Setter
     bool getCat()
     {
         return cat;
@@ -113,6 +118,8 @@ public class ChangeList : MonoBehaviour {
         pencil = NEW;
         }
 
+
+	//updatet Liste je nach Variablenzustand
 	void listUpdate() {
 		//Wenn alle Aufgaben erfüllt sind wird die vollstänig abgehakte Liste angezeigt
 		if (cat && pills && phone && pencil) {
