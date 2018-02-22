@@ -225,11 +225,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\ButtonMng.cs" />
     <Compile Include="Assets\Footsteps.cs" />
     <Compile Include="Assets\scripts\ChangeList.cs" />
-    <Compile Include="Assets\scripts\displayEndText.cs" />
-    <Compile Include="Assets\scripts\displayPenText.cs" />
     <Compile Include="Assets\scripts\ILookAtHandler.cs" />
     <Compile Include="Assets\scripts\LookAtInteraction.cs" />
     <Compile Include="Assets\scripts\LookAtList.cs" />
