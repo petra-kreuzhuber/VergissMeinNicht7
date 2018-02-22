@@ -1,15 +1,20 @@
-﻿  using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
+
+
 
 public class ChangeList : MonoBehaviour {
 
+    endScreen temp = new endScreen();
     public bool cat = false;
 	public bool pencil = false;
 	public bool pills = false;
     public bool phone = false;
-
+     
 
 	public GameObject otherGameObject;
 	private PickPills pickPills;
@@ -47,8 +52,10 @@ public class ChangeList : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//erster Katzenruf gleich am Anfang
-        if(Time.time > timer + 20 && !biggerThanTimer)
+        
+ 
+        //erster Katzenruf gleich am Anfang
+        if (Time.time > timer + 20 && !biggerThanTimer)
         {
             biggerThanTimer = true;
             audio1.Play();
@@ -85,15 +92,19 @@ public class ChangeList : MonoBehaviour {
 		//nach bestimmter Zeit wird Telephon abgeschlossen 
 		if (Time.time > timer + 25 && biggerThanTimer6) {
 			phone = true;
-			//ende?!
-		}
+            temp.showScreen("EndScreen");
+
+
+        }
 
 		//updatet die Liste je nach Variablenzustand
 		listUpdate ();
     }
 
+    
 
-	//Getter und Setter
+
+    //Getter und Setter
     bool getCat()
     {
         return cat;
